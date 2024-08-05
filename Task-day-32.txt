@@ -1,0 +1,54 @@
+1.Bookstall
+
+class book_stall:
+	book={}
+	def __init__(self):
+		print("Welcome to book stall...")
+	def add_book(self):
+		bname=input("Enter the name of the book: ")
+		price=int(input("Enter the price: "))
+		self.p=price
+		self.b=bname
+		self.book[self.b]=self.p
+		print("One book added sucessfully!!!")
+	def display(self):
+		print("Title\t\t\tPrice")
+		for x,y in self.book.items():
+			print(x,"\t\t\t",y)
+book=book_stall()
+print("1.Add\n2.Display\n3.Exit")
+while True:
+	ch=int(input("Enter your choice: "))
+	if ch==1:
+		book.add_book()
+	elif ch==2:
+		book.display()
+	elif ch==3:
+		print("Exiting!!!")
+		break
+	else:
+		print("Please select a valid choice...")
+
+2.electricity bill
+
+class bill:
+	def __init__(self,unit):
+		self.u=unit
+		self.charge=0
+	def calculate(self):
+		if self.u<=100:
+			self.charge=self.u*0.5
+		elif self.u<=150:
+			self.charge=(100*0.5)+((self.u-100)*0.75)
+		elif self.u<=200:
+			self.charge=(100*0.5)+(50*0.75)+(self.u-150)
+		else:
+			self.charge=(100*0.5)+(50*0.75)+50+((self.u-200)*2)
+	def display(self):
+		print("Units : ",self.u)
+		print("Charge : ",self.charge)
+unt=int(input("Enter the unit of electricity consumed : "))
+e=bill(unt)
+e.calculate()
+e.display()
+		
