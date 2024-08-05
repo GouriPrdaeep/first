@@ -1,0 +1,49 @@
+1.calculate SI using function with default argument
+
+def simple_interest(p,n,r=0.25):
+	i=p*r*n
+	return i
+i1=simple_interest(5000,6,0.3)
+print("Interest",i1)
+i2=simple_interest(5000,6)
+print("Interest",i2)
+
+2.program to implement arbitary argument
+
+def my_function(*formal):
+	print(type(formal))
+	s=0
+	for x in formal:
+		s=s+x
+	print("Sum is ",s)
+my_function(10,20)
+my_function(10,20,30,40,50)
+my_function(10.2,15.5,26.3)
+
+3.sum of digits using function
+
+def sum_digits(n):
+	sum=0
+	while n!=0:
+		d=n%10
+		sum=sum+d
+		n=n//10
+	return sum
+num=int(input("Enter number"))
+s=sum_digits(num)
+print("Sum of digits",s)
+
+4.sum of elements in a list using function
+
+def sum(n):
+	s=0
+	for x in n:
+		s=s+x
+	return s
+a=[]
+m=int(input("Enter the number of elements: "))
+print("Enter the elements")
+for i in range(0,m):
+	k=int(input())
+	a.append(k)
+print("Sum is: ",sum(a))
